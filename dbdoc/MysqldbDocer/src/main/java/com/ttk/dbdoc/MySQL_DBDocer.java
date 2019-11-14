@@ -41,10 +41,10 @@ public class MySQL_DBDocer {
         }
     }
 
-    private static String url = "jdbc:mysql://10.4.231.239:3306/pas_unittest";//链接url
-    private static String username = "admin"; //用户名
-    private static String password = "admin@123"; //密码
-    private static String schema = "pas_unittest"; //目标数据库 名
+    private static String url = "jdbc:mysql://localhost:3306/ceres";//链接url
+    private static String username = "root"; //用户名
+    private static String password = "123456"; //密码
+    private static String schema = "ceres"; //目标数据库 名
     //查询所有表的sql语句
     private static String sql_get_all_tables = "select table_name,TABLE_COMMENT from INFORMATION_SCHEMA.tables where " +
             "TABLE_SCHEMA='" + schema + "' and TABLE_TYPE='BASE TABLE'";
@@ -56,7 +56,7 @@ public class MySQL_DBDocer {
     public static  void main(String[] args) throws Exception {
         //初始化word文档
         Document document = new Document(PageSize.A4);
-        RtfWriter2.getInstance(document, new FileOutputStream("/Users/jimhuang/work/db.doc"));
+        RtfWriter2.getInstance(document, new FileOutputStream("/Users/jimhuang/work/sources/externalSources/db.doc"));
         document.open();
         //查询开始
         Connection conn = getConnection();
